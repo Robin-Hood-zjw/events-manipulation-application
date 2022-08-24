@@ -1,3 +1,3 @@
 # events-manipulation-application
 
-Hi
+Hello there!
