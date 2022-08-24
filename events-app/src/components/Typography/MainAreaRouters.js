@@ -1,6 +1,6 @@
 import React from "react";
 
-import EventsPage from "./EventsPage";
+import EventsPage from "./MainArea/EventsPage";
 
 const MainArea = () => {
   return (

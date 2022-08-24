@@ -1,10 +1,10 @@
 import React from "react";
-import { Layout } from "antd";
+import { Button, Layout } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
 
-const SiderArea = () => {
+const SiderArea = (props) => {
   return (
     <Header
       className="site-layout-background"
@@ -12,10 +12,22 @@ const SiderArea = () => {
         padding: 0,
       }}
     >
-      {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-        className: "trigger",
-        onClick: () => setCollapsed(!collapsed),
-      })}
+      <section>
+        {React.createElement(
+          props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+          {
+            className: "trigger",
+            onClick: props.toggle,
+          }
+        )}
+      </section>
+
+      <section>
+        <div>
+          <Button type="primary">Login</Button>
+          <Button type="primary">Sign Up</Button>
+        </div>
+      </section>
     </Header>
   );
 };
