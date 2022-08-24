@@ -10,8 +10,9 @@ import React, { useState } from "react";
 
 import "../index.css";
 import "antd/dist/antd.css";
+import MainArea from "./Typography/MainArea/MainAreaRouters";
 
-const { Header, Sider, Content } = Layout;
+const { Header, Sider } = Layout;
 
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -27,21 +28,22 @@ const App = () => {
             {
               key: "1",
               icon: <UserOutlined />,
-              label: "nav 1",
+              label: "Events",
             },
             {
               key: "2",
               icon: <VideoCameraOutlined />,
-              label: "nav 2",
+              label: "Create Event",
             },
             {
               key: "3",
               icon: <UploadOutlined />,
-              label: "nav 3",
+              label: "Profile",
             },
           ]}
         />
       </Sider>
+
       <Layout className="site-layout">
         <Header
           className="site-layout-background"
@@ -57,16 +59,8 @@ const App = () => {
             }
           )}
         </Header>
-        <Content
-          className="site-layout-background"
-          style={{
-            margin: "24px 16px",
-            padding: 24,
-            minHeight: 280,
-          }}
-        >
-          Content
-        </Content>
+
+        <MainArea />
       </Layout>
     </Layout>
   );
