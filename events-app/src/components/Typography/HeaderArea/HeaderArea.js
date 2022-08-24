@@ -7,7 +7,7 @@ const { Header } = Layout;
 const SiderArea = (props) => {
   return (
     <Header
-      className="site-layout-background"
+      className="site-layout-background header-layout"
       style={{
         padding: 0,
       }}
@@ -22,11 +22,9 @@ const SiderArea = (props) => {
         )}
       </section>
 
-      <section>
-        <div>
-          <Button type="primary">Login</Button>
-          <Button type="primary">Sign Up</Button>
-        </div>
+      <section className="buttons">
+        <Button type="primary">Login</Button>
+        <Button type="primary">Sign Up</Button>
       </section>
     </Header>
   );
