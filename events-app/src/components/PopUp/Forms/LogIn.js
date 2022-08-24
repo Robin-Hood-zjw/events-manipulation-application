@@ -12,9 +12,7 @@ const LogIn = () => {
 
   return (
     <Form
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
+      name="login-form"
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -36,17 +34,13 @@ const LogIn = () => {
         <Input.Password />
       </Form.Item>
 
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        wrapperCol={{ offset: 8, span: 16 }}
-      >
+      <Form.Item name="remember" valuePropName="checked">
         <Checkbox>Remember me</Checkbox>
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item>
         <Button type="primary" htmlType="submit">
-          Submit
+          Log In
         </Button>
       </Form.Item>
     </Form>

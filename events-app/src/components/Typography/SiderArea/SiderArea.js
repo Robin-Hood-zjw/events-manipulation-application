@@ -6,12 +6,18 @@ import {
 import React from "react";
 import { Layout, Menu } from "antd";
 
+import "./Sider.css";
+
 const { Sider } = Layout;
 
 const SiderArea = (props) => {
   return (
     <Sider trigger={null} collapsible collapsed={props.collapsed}>
-      <image src="" alt="logo" />
+      <image
+        className="logo"
+        src="../../../public/images/logo.png"
+        alt="logo"
+      />
       <Menu
         theme="dark"
         mode="inline"

@@ -18,7 +18,7 @@ const App = () => {
     <Layout>
       <SiderArea collapsed={collapsed} />
 
-      <Layout className="site-layout">
+      <Layout style={{ minHeight: "100vh" }} className="site-layout">
         <HeaderArea toggle={toggle} collapsed={collapsed} />
         <MainArea />
       </Layout>
