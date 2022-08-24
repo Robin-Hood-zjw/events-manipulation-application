@@ -5,7 +5,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
 import React, { useState } from "react";
 
 import "../index.css";
@@ -14,16 +14,14 @@ import MainArea from "./Typography/MainArea/MainAreaRouters";
 import SiderArea from "./Typography/SiderArea/SiderArea";
 import HeaderArea from "./Typography/HeaderArea/HeaderArea";
 
-const { Header, Sider } = Layout;
-
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout>
-      <SiderArea />
+      <SiderArea collapsed={collapsed} />
 
       <Layout className="site-layout">
-        <HeaderArea />
+        <HeaderArea toggle={} collapsed={collapsed} />
 
         <MainArea />
       </Layout>

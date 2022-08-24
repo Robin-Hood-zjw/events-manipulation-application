@@ -1,3 +1,8 @@
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
 import React from "react";
 import { Layout } from "antd";
 
@@ -6,7 +11,7 @@ const { Sider } = Layout;
 const SiderArea = () => {
   return (
     <Sider trigger={null} collapsible collapsed={collapsed}>
-      <div className="logo" />
+      <image src="" alt="logo" />
       <Menu
         theme="dark"
         mode="inline"
