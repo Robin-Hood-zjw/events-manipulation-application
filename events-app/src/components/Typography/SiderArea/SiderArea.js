@@ -4,7 +4,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Image, Layout, Menu } from "antd";
 
 import "./Sider.css";
 
@@ -13,11 +13,7 @@ const { Sider } = Layout;
 const SiderArea = (props) => {
   return (
     <Sider trigger={null} collapsible collapsed={props.collapsed}>
-      <image
-        className="logo"
-        src="../../../public/images/logo.png"
-        alt="logo"
-      />
+      <Image className="logo" src={"./logo.png"} />
       <Menu
         theme="dark"
         mode="inline"
