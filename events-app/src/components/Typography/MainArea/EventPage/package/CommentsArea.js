@@ -1,17 +1,23 @@
 import { Avatar, List, Rate } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { LikeOutlined, MessageOutlined } from "@ant-design/icons";
 
 import { IconArea, sortImgType, getAvgRate } from "./Helpers";
 import { fetchEventsData } from "../../../../Data/EventsData/EventsData";
 
 const CommentsArea = (props) => {
-  let eventsData = "";
-  eventsData = fetchEventsData();
+  const [eventsList, setEventsList] = useState([]);
 
-  // useEffect(() => {
-  //   eventsData = fetchEventsData({ date: date });
-  // }, [props.date]);
+  const fetchEventsAPI = async () => {
+    const res = await fetchEventsData();
+    return res;
+  };
+
+  useEffect(() => {
+    const results = fetchEventsAPI();
+    console.log(results);
+    // setEventsList(results);
+  }, []);
 
   return (
     <List
@@ -20,12 +26,8 @@ const CommentsArea = (props) => {
       pagination={{
         pageSize: 3,
       }}
-      dataSource={eventsData.data}
-      footer={
-        <div>
-          <b>Let's meet up!</b>
-        </div>
-      }
+      dataSource={eventsList}
+      footer={<div>Let's meet up!</div>}
       renderItem={(item) => (
         <List.Item
           key={item.eventId}
