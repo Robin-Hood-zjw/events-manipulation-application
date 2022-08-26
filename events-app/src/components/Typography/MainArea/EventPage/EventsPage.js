@@ -1,10 +1,11 @@
 import moment from "moment";
 import React, { useState } from "react";
 import { Calendar, Col, Row } from "antd";
-import { Content } from "antd/lib/layout/layout";
 
+import styles from "./package/EventPage.scss";
+import { Content } from "antd/lib/layout/layout";
 import CommentsArea from "./package/CommentsArea";
-import second from "../../../Data/EventsData/EventsData";
+import { fetchEventsData } from "../../../Data/EventsData/EventsData";
 
 const EventsPage = () => {
   const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
@@ -14,25 +15,16 @@ const EventsPage = () => {
   };
 
   return (
-    <>
-      {/* <Content
-        className="site-layout-background"
-        style={{
-          margin: "24px 16px",
-          padding: 24,
-          minHeight: 280,
-        }}
-      > */}
+    <Content className={styles.site_layout_background}>
       <Row>
-        <Col lg={20} md={18} sm={15}>
+        <Col lg={10} md={24} sm={24}>
           <CommentsArea date={date} />
         </Col>
-        <Col lg={22} md={18} sm={16}>
+        <Col lg={10} md={24} sm={24}>
           <Calendar fullscreen={false} onPanelChange={onDateChange} />
         </Col>
       </Row>
-      {/* </Content> */}
-    </>
+    </Content>
   );
 };
 

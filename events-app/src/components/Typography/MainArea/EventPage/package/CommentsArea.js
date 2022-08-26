@@ -1,20 +1,27 @@
-import { Avatar, List } from "antd";
+import { Avatar, List, Rate } from "antd";
 import React, { useEffect } from "react";
-import { LikeOutlined, MessageOutlined, StarOutlined } from "@ant-design/icons";
+import { LikeOutlined, MessageOutlined } from "@ant-design/icons";
 
-import { IconArea, sortImgType } from "./Helpers";
+import { IconArea, sortImgType, getAvgRate } from "./Helpers";
+import { fetchEventsData } from "../../../../Data/EventsData/EventsData";
+import { date } from "faker/lib/locales/az";
 
 const CommentsArea = (props) => {
-  useEffect(() => {}, [props.date]);
+  let eventsData = "";
+  // eventsData = fetchEventsData({ date: date });
+
+  useEffect(() => {
+    eventsData = fetchEventsData({ date: date });
+  }, [props.date]);
 
   return (
     <List
-      itemLayout="vertical"
       size="large"
+      itemLayout="vertical"
       pagination={{
         pageSize: 3,
       }}
-      //   dataSource={data}
+      dataSource={eventsData}
       footer={
         <div>
           <b>Let's meet up!</b>
@@ -24,11 +31,7 @@ const CommentsArea = (props) => {
         <List.Item
           key={item.title}
           actions={[
-            <IconArea
-              icon={StarOutlined}
-              text="156"
-              key="list-vertical-star-o"
-            />,
+            <Rate disabled allowHalf value={getAvgRate(item.rate)} />,
 
             <IconArea
               icon={LikeOutlined}
@@ -38,7 +41,7 @@ const CommentsArea = (props) => {
 
             <IconArea
               icon={MessageOutlined}
-              text="2"
+              text={item.rate.length}
               key="list-vertical-message"
             />,
           ]}
@@ -49,7 +52,6 @@ const CommentsArea = (props) => {
             title={<a href={item.href}>{item.title}</a>}
             description={item.description}
           />
-          {item.content}
         </List.Item>
       )}
     />

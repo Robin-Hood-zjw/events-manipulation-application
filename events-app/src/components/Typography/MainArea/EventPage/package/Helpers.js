@@ -1,6 +1,5 @@
+import React from "react";
 import { Space } from "antd";
-
-import "./images";
 
 export const sortImgType = (event) => {
   switch (event.type) {
@@ -36,3 +35,7 @@ export const IconArea = ({ icon, text }) => (
     {text}
   </Space>
 );
+
+export const getAvgRate = (rates) =>
+  rates.map((rate) => rate).reduce((total, rate) => total + rate, 0) /
+  rates.length;
