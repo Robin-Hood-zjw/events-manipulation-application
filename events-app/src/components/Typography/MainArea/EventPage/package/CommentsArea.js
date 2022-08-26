@@ -4,15 +4,14 @@ import { LikeOutlined, MessageOutlined } from "@ant-design/icons";
 
 import { IconArea, sortImgType, getAvgRate } from "./Helpers";
 import { fetchEventsData } from "../../../../Data/EventsData/EventsData";
-import { date } from "faker/lib/locales/az";
 
 const CommentsArea = (props) => {
   let eventsData = "";
-  // eventsData = fetchEventsData({ date: date });
+  eventsData = fetchEventsData();
 
-  useEffect(() => {
-    eventsData = fetchEventsData({ date: date });
-  }, [props.date]);
+  // useEffect(() => {
+  //   eventsData = fetchEventsData({ date: date });
+  // }, [props.date]);
 
   return (
     <List
@@ -21,7 +20,7 @@ const CommentsArea = (props) => {
       pagination={{
         pageSize: 3,
       }}
-      dataSource={eventsData}
+      dataSource={eventsData.data}
       footer={
         <div>
           <b>Let's meet up!</b>
@@ -29,7 +28,7 @@ const CommentsArea = (props) => {
       }
       renderItem={(item) => (
         <List.Item
-          key={item.title}
+          key={item.eventId}
           actions={[
             <Rate disabled allowHalf value={getAvgRate(item.rate)} />,
 
@@ -48,8 +47,8 @@ const CommentsArea = (props) => {
           extra={sortImgType(item)}
         >
           <List.Item.Meta
-            avatar={<Avatar src={item.avatar} />}
-            title={<a href={item.href}>{item.title}</a>}
+            // avatar={<Avatar src={item.avatar} />}
+            title={<a>{item.title}</a>}
             description={item.description}
           />
         </List.Item>

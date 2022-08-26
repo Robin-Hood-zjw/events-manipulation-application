@@ -2,7 +2,7 @@ import axios from "axios";
 
 const EVENTS_URL = "https://601caf791a9c220017060c02.mockapi.io/api/v1/Events";
 
-export const fetchEventsData = async ({ date = "" }) => {
+export const fetchEventsData = async (date = "") => {
   try {
     let params = [];
     let url = EVENTS_URL;
@@ -15,6 +15,7 @@ export const fetchEventsData = async ({ date = "" }) => {
     }
 
     const response = await axios.get(url);
+    // console.log(response);
     return response.data;
   } catch (error) {
     throw error;
