@@ -17,25 +17,36 @@ const ProfilePage = () => {
         borderRadius: "10px",
       }}
     >
-      <Col>
-        <h1>My Profile</h1>
-        <Card
-          bordered={false}
-          style={{
-            width: 500,
-          }}
-        >
+      <Col
+        xs={{ span: 12, offset: 6 }}
+        sm={{ span: 14, offset: 5 }}
+        md={{ span: 16, offset: 4 }}
+        lg={{ span: 18, offset: 3 }}
+        xl={{ span: 20, offset: 2 }}
+      >
+        <h1 style={{ margin: "10px auto" }}>My Profile</h1>
+
+        <Card bordered={false}>
           <section
             style={{
-              margin: "20px auto",
               display: "flex",
               justifyContent: "center",
+              margin: "20px auto",
             }}
           >
-            <Avatar size={{ xs: 80, md: 90, lg: 200 }} icon={<UsbOutlined />} />
+            <Avatar
+              size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+              icon={<UsbOutlined />}
+            />
           </section>
 
-          <section style={{ display: "flex", justifyContent: "space-around" }}>
+          <section
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              flexWrap: "wrap",
+            }}
+          >
             <div>
               <h4>Username</h4>
               <p>{}</p>
@@ -48,9 +59,18 @@ const ProfilePage = () => {
           </section>
         </Card>
       </Col>
+
       <Divider />
-      <Col>
+
+      <Col
+        xs={{ span: 12, offset: 6 }}
+        sm={{ span: 14, offset: 5 }}
+        md={{ span: 16, offset: 4 }}
+        lg={{ span: 18, offset: 3 }}
+        xl={{ span: 20, offset: 2 }}
+      >
         <h1>My Events</h1>
+
         <section>
           <Table columns={TableColumns} dataSource={eventsList} />
         </section>
