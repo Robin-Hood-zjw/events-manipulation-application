@@ -1,22 +1,36 @@
-import { Col, Row, DatePicker } from "antd";
-import React from "react";
+import React, { useState } from "react";
+import { Option } from "antd/lib/mentions";
+import { Col, Row, DatePicker, Form, Input, Select, Button } from "antd";
+
+import "./package/CreateEvent.css";
 
 const CreateEventPage = () => {
+  const [city, setCity] = useState("");
+  const [venue, setVenue] = useState("");
+
   return (
-    <Row>
+    <Row
+      style={{
+        background: "#fff",
+        margin: "20px 25px",
+        padding: "30px",
+        borderRadius: "10px",
+        display: "flex",
+        flexFlow: "column nowrap",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Col>
-        <Form
-          {...layout}
-          ref={this.formRef}
-          name="control-ref"
-          onFinish={this.onFinish}
-        >
+        <h1>Create New Event</h1>
+        <Form>
           <Form.Item
             name="title"
             label="Title"
             rules={[
               {
                 required: true,
+                message: "Please input an event's name!",
               },
             ]}
           >
@@ -29,6 +43,7 @@ const CreateEventPage = () => {
             rules={[
               {
                 required: true,
+                message: "Please input some descriptions!",
               },
             ]}
           >
@@ -41,6 +56,7 @@ const CreateEventPage = () => {
             rules={[
               {
                 required: true,
+                message: "Please choose a event type!",
               },
             ]}
           >
@@ -53,12 +69,12 @@ const CreateEventPage = () => {
             rules={[
               {
                 required: true,
+                message: "Please choose a city!",
               },
             ]}
           >
             <Select
               placeholder="Select a option and change input text above"
-              onChange={this.onCityChange}
               allowClear
             >
               <Option value="seattle">Seattle</Option>
@@ -73,12 +89,12 @@ const CreateEventPage = () => {
             rules={[
               {
                 required: true,
+                message: "Please choose a venue!",
               },
             ]}
           >
             <Select
               placeholder="Select a option and change input text above"
-              onChange={this.onCityChange}
               allowClear
             >
               <Option value="seattle">Seattle</Option>
@@ -88,33 +104,14 @@ const CreateEventPage = () => {
           </Form.Item>
 
           <Form.Item
-            noStyle
-            shouldUpdate={(prevValues, currentValues) =>
-              prevValues.gender !== currentValues.gender
-            }
+            name="datepicker"
+            label="DatePicker"
+            rules={[{ required: true }]}
           >
-            {({ getFieldValue }) =>
-              getFieldValue("gender") === "other" ? (
-                <Form.Item
-                  name="customizeGender"
-                  label="Customize Gender"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
-              ) : null
-            }
-          </Form.Item>
-
-          <Form.Item label="DatePicker">
             <DatePicker />
           </Form.Item>
 
-          <Form.Item {...tailLayout}>
+          <Form.Item>
             <Button type="primary" htmlType="submit">
               Create
             </Button>
