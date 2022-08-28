@@ -15,7 +15,6 @@ export const fetchEventsData = async (date = "") => {
     }
 
     const response = await axios.get(url);
-    // console.log(response);
     return response.data;
   } catch (error) {
     throw error;

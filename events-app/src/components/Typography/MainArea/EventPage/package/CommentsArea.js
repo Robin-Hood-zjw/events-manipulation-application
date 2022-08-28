@@ -7,16 +7,15 @@ import { fetchEventsData } from "../../../../Data/EventsData/EventsData";
 
 const CommentsArea = (props) => {
   const [eventsList, setEventsList] = useState([]);
+  let results = '';
 
   const fetchEventsAPI = async () => {
     const res = await fetchEventsData();
-    return res;
+    setEventsList(res);
   };
 
   useEffect(() => {
-    const results = fetchEventsAPI();
-    console.log(results);
-    // setEventsList(results);
+    results = fetchEventsAPI();
   }, []);
 
   return (

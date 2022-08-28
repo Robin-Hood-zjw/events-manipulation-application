@@ -7,7 +7,7 @@ import ProfilePage from "./MainArea/ProfilePage/ProfilePage";
 const MainArea = () => {
   return (
     <>
-      <ProfilePage />
+      <EventsPage />
     </>
   );
 };
