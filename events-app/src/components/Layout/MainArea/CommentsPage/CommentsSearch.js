@@ -24,8 +24,10 @@ const CommentsSearch = () => {
 
             <div>
                 <Form.Item>
-                    <Button></Button>
-                    <Button></Button>
+                    <Button type='primary' htmlType='submit' icon={<SearchOutlined />}>
+                        Search
+                    </Button>
+                    <Button type='text' htmlType='reset'>Cancel</Button>
                 </Form.Item>
             </div>
         </>
