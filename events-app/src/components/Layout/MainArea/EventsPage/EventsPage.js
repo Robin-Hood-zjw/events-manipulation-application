@@ -10,7 +10,7 @@ import { fetchEventsData } from "../../../Data/EventsData/EventsData";
 const EventsPage = () => {
   const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
 
-  const onDateChange = (date) => {
+  onDateChange = (date) => {
     setDate(moment(date).format("YYYY-MM-DD"));
   };
 

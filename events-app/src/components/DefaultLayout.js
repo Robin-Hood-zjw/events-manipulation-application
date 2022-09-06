@@ -7,7 +7,7 @@ import MainArea from "./Typography/MainAreaRouters";
 import SiderArea from "./Typography/SiderArea/SiderArea";
 import HeaderArea from "./Typography/HeaderArea/HeaderArea";
 
-const App = () => {
+const Layout = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggle = () => {
@@ -26,4 +26,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Layout;
