@@ -3,11 +3,11 @@ import React, { useState } from "react";
 
 import "../index.css";
 import "antd/dist/antd.css";
-import MainArea from "./Typography/MainAreaRouters";
-import SiderArea from "./Typography/SiderArea/SiderArea";
-import HeaderArea from "./Typography/HeaderArea/HeaderArea";
+import MainArea from "./Layout/MainAreaRouters";
+import SiderArea from "./Layout/SiderArea/SiderArea";
+import HeaderArea from "./Layout/HeaderArea/HeaderArea";
 
-const Layout = () => {
+const PageLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggle = () => {
@@ -26,4 +26,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default PageLayout;
