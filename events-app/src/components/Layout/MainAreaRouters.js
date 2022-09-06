@@ -16,14 +16,14 @@ const MainArea = () => {
       <Route path="/events" element={<Layout />}>
         <Route index element={<EventsPage />}>
           <Route path=":id" element={<EventPage />}>
-            <Route path=":id/attendees" element={<AttendeesPage />}/>
-            <Route path=":id/comments" element={<CommentsPage />}/>
+            <Route path=":id/attendees" element={<AttendeesPage />} />
+            <Route path=":id/comments" element={<CommentsPage />} />
           </Route>
         </Route>
       </Route>
 
-      <Route path="/create-event" element={<CreateEventPage />}/>
-      <Route path="/profile" element={<ProfilePage />}/>
+      <Route path="/create-event" element={<CreateEventPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
     </Routes>
   </BrowserRouter>
   );
