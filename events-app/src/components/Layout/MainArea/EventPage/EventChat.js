@@ -1,5 +1,7 @@
-import { Avatar, Button, Form, Input } from 'antd';
 import React, { useState } from 'react';
+import { Avatar, Button, Form, Input } from 'antd';
+
+import CommentsArea from './CommentsArea';
 
 const { Item } = Form;
 const { TextArea } = Input;
@@ -30,15 +32,27 @@ const EventChat = (props) => {
         if(!value) return;
         setValue('');
     };
+    handleLoadMore = () => {};
 
     return (
         <div>
             <div>
                 Chat about this event
             </div>
+            {
+                events && events.length > 0 && events[0].comments.length > 10 && 
+                <div>
+                    <CommentsArea />
+                </div>
+            }
 
             <div>
-
+                <Button
+                    type='primary'
+                    onClick={handleLoadMore}
+                >
+                    Load More
+                </Button>
             </div>
 
             <Comment 
