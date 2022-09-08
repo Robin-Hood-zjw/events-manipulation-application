@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "antd";
 
 import EventJoin from "./EventJoin";
@@ -8,6 +8,7 @@ import EventPeople from "./EventPeople";
 
 const EventPage = (props) => {
   const { events, hosts, eventLoading, hostsLoading, user } = props;
+  useEffect(() => {}, []);
 
   return (
     <Row style={{ maxWidth: "1000px" }}>
