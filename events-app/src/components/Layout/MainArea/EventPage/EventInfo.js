@@ -13,7 +13,6 @@ const EventInfo = (props) => {
           <div>
             <InfoOutlined />
           </div>
-
           <div>
             <p>{events && events[0].description}</p>
           </div>

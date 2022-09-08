@@ -47,7 +47,7 @@ const EventChat = (props) => {
         </div>
 
         <Comment
-          avatar={<Avatar src={} icon={} alt={} />}
+          // avatar={<Avatar src={} icon={} alt={} />}
           content={
             <Editor
               value={value}
