@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Avatar, Button, Form, Input } from "antd";
+import { Avatar, Button, Comment, Form, Input } from "antd";
 
 import CommentsArea from "./CommentsArea";
 
@@ -23,27 +23,27 @@ const Editor = ({ value, onChange, onSubmit }) => (
 const EventChat = (props) => {
   const [value, setValue] = useState("");
 
-  handleEdit = (event) => setValue(event.target.value);
-  handleSubmit = () => {
-    if (!value) return;
-    setValue("");
-  };
-  handleLoadMore = () => {};
+  // handleEdit = (event) => setValue(event.target.value);
+  // handleSubmit = () => {
+  //   if (!value) return;
+  //   setValue("");
+  // };
+  // handleLoadMore = () => {
+  //   return;
+  // };
 
   return (
     <div>
       <div>Chat about this event</div>
       <div>
-        {events && events.length > 0 && events[0].comments.length > 10 && (
+        {/* {events && events.length > 0 && events[0].comments.length > 10 && (
           <div>
             <CommentsArea />
           </div>
-        )}
+        )} */}
 
         <div>
-          <Button type="primary" onClick={handleLoadMore}>
-            Load More
-          </Button>
+          <Button type="primary">Load More</Button>
         </div>
 
         <Comment
@@ -51,8 +51,8 @@ const EventChat = (props) => {
           content={
             <Editor
               value={value}
-              onChange={handleEdit}
-              onSubmit={handleSubmit}
+              // onChange={handleEdit}
+              // onSubmit={handleSubmit}
             />
           }
         />

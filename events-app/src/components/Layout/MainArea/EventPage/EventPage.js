@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
 import { Col, Row } from "antd";
+import React, { useEffect } from "react";
 
 import EventJoin from "./EventJoin";
 import EventChat from "./EventChat";

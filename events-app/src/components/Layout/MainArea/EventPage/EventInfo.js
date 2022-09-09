@@ -1,7 +1,12 @@
 import React from "react";
 import moment from "moment";
 import { Avatar, Button } from "antd";
-import { CalendarOutlined, InfoOutlined } from "@ant-design/icons";
+import {
+  CalendarOutlined,
+  CompassOutlined,
+  InfoOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 const EventInfo = (props) => {
   const { events } = props;
@@ -36,11 +41,11 @@ const EventInfo = (props) => {
         </section>
       </div>
 
-      {this.state.showMap && (
+      {/* {this.state.showMap && (
         <div>
           <MyMapComponent />
         </div>
-      )}
+      )} */}
 
       <section>
         <div>Who's coming?</div>
