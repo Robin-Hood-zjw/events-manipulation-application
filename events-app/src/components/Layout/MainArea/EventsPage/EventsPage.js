@@ -1,10 +1,11 @@
 import moment from "moment";
+import "antd/dist/antd.css";
 import React, { useState } from "react";
 import { Calendar, Col, Row } from "antd";
-
-import styles from "./package/EventPage.scss";
 import { Content } from "antd/lib/layout/layout";
-import CommentsArea from "./package/CommentsArea";
+
+import styles from "./index.module.scss";
+import CommentsArea from "./CommentsArea";
 import { fetchEventsData } from "../../../Data/EventsData/EventsData";
 
 const EventsPage = () => {

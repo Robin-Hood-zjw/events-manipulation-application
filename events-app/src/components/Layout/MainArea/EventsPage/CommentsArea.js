@@ -2,12 +2,12 @@ import { Avatar, List, Rate } from "antd";
 import React, { useEffect, useState } from "react";
 import { LikeOutlined, MessageOutlined } from "@ant-design/icons";
 
-import { IconArea, sortImgType, getAvgRate } from "./Helpers";
-import { fetchEventsData } from "../../../../Data/EventsData/EventsData";
+import { IconArea, sortImgType, getAvgRate } from "./helpersFunc";
+import { fetchEventsData } from "../../../Data/EventsData/EventsData";
 
 const CommentsArea = (props) => {
   const [eventsList, setEventsList] = useState([]);
-  let results = '';
+  let results = "";
 
   const fetchEventsAPI = async () => {
     const res = await fetchEventsData();
