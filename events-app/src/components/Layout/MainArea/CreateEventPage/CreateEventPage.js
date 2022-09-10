@@ -2,25 +2,14 @@ import React, { useState } from "react";
 import { Option } from "antd/lib/mentions";
 import { Col, Row, DatePicker, Form, Input, Select, Button } from "antd";
 
-import "./package/CreateEvent.css";
+import styles from "./index.module.scss";
 
 const CreateEventPage = () => {
   const [city, setCity] = useState("");
   const [venue, setVenue] = useState("");
 
   return (
-    <Row
-      style={{
-        background: "#fff",
-        margin: "20px 25px",
-        padding: "30px",
-        borderRadius: "10px",
-        display: "flex",
-        flexFlow: "column nowrap",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <Row className={styles.settings}>
       <Col>
         <h1>Create New Event</h1>
         <Form>

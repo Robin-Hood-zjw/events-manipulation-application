@@ -5,8 +5,6 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Image, Layout, Menu } from "antd";
-
-import "./Sider.css";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import styles from "./index.module.scss";
