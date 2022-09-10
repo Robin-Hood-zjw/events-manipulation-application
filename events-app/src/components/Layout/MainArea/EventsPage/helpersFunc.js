@@ -9,22 +9,34 @@ export const sortImgType = (event) => {
           width={225}
           height={120}
           alt="celebration"
-          src="./celebration.jpeg"
+          src="/image/celebration.jpeg"
         />
       );
     case "ceremony":
       return (
-        <image width={225} height={120} alt="ceremony" src="./ceremony.jpeg" />
+        <image
+          width={225}
+          height={120}
+          alt="ceremony"
+          src="/image/ceremony.jpeg"
+        />
       );
     case "landmark":
       return (
-        <image width={225} height={120} alt="landmark" src="./landmark.jpeg" />
+        <image
+          width={225}
+          height={120}
+          alt="landmark"
+          src="/image/landmark.jpeg"
+        />
       );
     case "movie":
-      return <image width={225} height={120} alt="movie" src="./movie.jpeg" />;
+      return (
+        <image width={225} height={120} alt="movie" src="/image/movie.jpeg" />
+      );
     case "travel":
       return (
-        <image width={225} height={120} alt="travel" src="./travel.jpeg" />
+        <image width={225} height={120} alt="travel" src="/image/travel.jpeg" />
       );
   }
 };

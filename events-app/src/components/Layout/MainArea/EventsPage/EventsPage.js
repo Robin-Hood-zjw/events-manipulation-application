@@ -17,7 +17,7 @@ const EventsPage = () => {
 
   return (
     <Content className={styles.site_layout_background}>
-      <Row>
+      <Row className={styles.main_area}>
         <Col lg={10} md={24} sm={24}>
           <CommentsArea date={date} />
         </Col>

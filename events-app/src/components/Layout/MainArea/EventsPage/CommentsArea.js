@@ -4,6 +4,8 @@ import { LikeOutlined, MessageOutlined } from "@ant-design/icons";
 
 import { IconArea, sortImgType, getAvgRate } from "./helpersFunc";
 import { fetchEventsData } from "../../../Data/EventsData/EventsData";
+import { Link } from "react-router-dom";
+import { compose } from "redux";
 
 const CommentsArea = (props) => {
   const [eventsList, setEventsList] = useState([]);
@@ -12,6 +14,10 @@ const CommentsArea = (props) => {
   const fetchEventsAPI = async () => {
     const res = await fetchEventsData();
     setEventsList(res);
+  };
+
+  const onClickEvent = () => {
+    console.log("I am here.");
   };
 
   useEffect(() => {
@@ -31,7 +37,12 @@ const CommentsArea = (props) => {
         <List.Item
           key={item.eventId}
           actions={[
-            <Rate disabled allowHalf value={getAvgRate(item.rate)} />,
+            <Rate
+              disabled
+              allowHalf
+              defaultValue={3}
+              value={getAvgRate(item.rate)}
+            />,
 
             <IconArea
               icon={LikeOutlined}
@@ -48,8 +59,12 @@ const CommentsArea = (props) => {
           extra={sortImgType(item)}
         >
           <List.Item.Meta
-            // avatar={<Avatar src={item.avatar} />}
-            title={<a>{item.title}</a>}
+            avatar={<Avatar src={item.avatar} />}
+            title={
+              <Link to={`/events/${item.eventId}`} onClick={onClickEvent}>
+                {item.title}
+              </Link>
+            }
             description={item.description}
           />
         </List.Item>
