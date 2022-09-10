@@ -1,0 +1,24 @@
+.profile_settings {
+  background-color: #fff;
+  margin: 20px 25px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.h1 {
+  margin: 10px auto;
+}
+
+.card {
+  &_avator {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+  }
+
+  ._info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}

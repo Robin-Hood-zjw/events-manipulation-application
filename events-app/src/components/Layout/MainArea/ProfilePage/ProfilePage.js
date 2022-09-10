@@ -3,20 +3,14 @@ import React, { useState } from "react";
 import { UsbOutlined } from "@ant-design/icons";
 import { Avatar, Card, Col, Divider, Row, Table } from "antd";
 
-import { TableColumns } from "./package/Helper";
+import { TableColumns } from "./Helper";
+import styles from "./index.module.scss";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
   const [eventsList, setEventsList] = useState([]);
 
   return (
-    <Row
-      style={{
-        background: "#fff",
-        margin: "20px 25px",
-        padding: "30px",
-        borderRadius: "10px",
-      }}
-    >
+    <Row className={styles.profile_settings}>
       <Col
         xs={{ span: 12, offset: 6 }}
         sm={{ span: 14, offset: 5 }}
@@ -24,40 +18,30 @@ const ProfilePage = () => {
         lg={{ span: 18, offset: 3 }}
         xl={{ span: 20, offset: 2 }}
       >
-        <h1 style={{ margin: "10px auto" }}>My Profile</h1>
+        <h1 className={styles.h1}>My Profile</h1>
 
-        <Card bordered={false}>
-          <section
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "20px auto",
-            }}
-          >
+        <Card className={styles.card} bordered={false}>
+          <section className={styles.card_avator}>
             <Avatar
-              size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+              // src={}
               icon={<UsbOutlined />}
+              size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
             />
           </section>
 
-          <section
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              flexWrap: "wrap",
-            }}
-          >
+          <section className={styles.card_info}>
             <div>
               <h4>Username</h4>
-              <p>{}</p>
+              {/* <p>{}</p> */}
             </div>
 
             <div>
               <h4>Email Address</h4>
-              <p>{}</p>
+              {/* <p>{}</p> */}
             </div>
           </section>
         </Card>
+        <Divider />
       </Col>
 
       <Divider />
