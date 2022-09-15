@@ -12,7 +12,7 @@ import styles from "./index.module.scss";
 const { Sider } = Layout;
 
 const SiderArea = (props) => {
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   const selectedKey = useLocation().pathname;
 
   const highlight = () => {
@@ -37,19 +37,19 @@ const SiderArea = (props) => {
             key: "Events",
             label: "Events",
             icon: <UserOutlined />,
-            onClick: () => <Navigate to={"/"} />,
+            onClick: () => navigate("./"),
           },
           {
             key: "Create Event",
             label: "Create Event",
             icon: <VideoCameraOutlined />,
-            onClick: () => <Navigate to={"/create-event"} />,
+            onClick: () => navigate("./create-event"),
           },
           {
             key: "Profile",
             label: "Profile",
             icon: <UploadOutlined />,
-            onClick: () => <Navigate to={"/profile"} />,
+            onClick: () => navigate("./profile"),
           },
         ]}
       />
