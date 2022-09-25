@@ -11,19 +11,17 @@ import ProfilePage from "./MainArea/ProfilePage/ProfilePage";
 
 const MainArea = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<EventsPage />} />
+    <Routes>
+      <Route path="/" element={<Layout />} />
+      <Route index element={<EventsPage />} />
 
-        <Route path="/events/:id" element={<EventPage />} />
-        <Route path="/events/:id/attendees" element={<AttendeesPage />} />
-        <Route path="/events/:id/comments" element={<CommentsPage />} />
+      <Route path="/events/:id" element={<EventPage />} />
+      <Route path="/events/:id/attendees" element={<AttendeesPage />} />
+      <Route path="/events/:id/comments" element={<CommentsPage />} />
 
-        <Route path="create-event" element={<CreateEventPage />} />
-        <Route path="profile" element={<ProfilePage />} />
-      </Routes>
-    </BrowserRouter>
+      <Route path="create-event" element={<CreateEventPage />} />
+      <Route path="profile" element={<ProfilePage />} />
+    </Routes>
   );
 };
 
