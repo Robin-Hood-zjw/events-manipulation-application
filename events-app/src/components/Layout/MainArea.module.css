@@ -1,0 +1,23 @@
+.events {
+  margin: 24px 16px;
+  padding: 24px;
+  min-height: 280px;
+}
+
+.comments {
+  margin: 24px 16px;
+  padding: 12px;
+  min-height: 280px;
+}
+
+.attendees {
+  margin: 24px 16px;
+  padding: 12px;
+  min-height: 280px;
+}
+
+.create-events {
+  margin: 24px 16px;
+  padding: 20px;
+  min-height: 280px;
+}

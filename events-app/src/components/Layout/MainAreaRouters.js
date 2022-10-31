@@ -20,7 +20,11 @@ const MainArea = () => {
       <Route path="/events/:id/comments" element={<CommentsPage />} />
 
       <Route path="create-event" element={<CreateEventPage />} />
-      <Route path="profile" element={<ProfilePage />} />
+      <Route
+        path="profile"
+        className="site-layout-background"
+        element={<ProfilePage />}
+      />
     </Routes>
   );
 };
